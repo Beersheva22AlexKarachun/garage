@@ -33,11 +33,6 @@ public class GarageImp extends Thread implements Garage {
         this(capacity, nWorkers, DEFAULT_SIMULATION_DURATION, DEFAULT_SIMULATION_UNIT);
     }
 
-    private void getNewCar() {
-        if (rd.nextDouble() <= CAR_SPAWN_PROBABILITY && !queue.offer(new Car())) {
-            rejectedCarCount++;
-        }
-    }
 
     @Override
     public void run() {
@@ -88,5 +83,11 @@ public class GarageImp extends Thread implements Garage {
 
     public AtomicInteger getRecoveredCarCount() {
         return recoveredCarCount;
+    }
+
+    private void getNewCar() {
+        if (rd.nextDouble() <= CAR_SPAWN_PROBABILITY && !queue.offer(new Car())) {
+            rejectedCarCount++;
+        }
     }
 }

@@ -12,4 +12,5 @@ public interface Garage {
     static final long DEFAULT_SIMULATION_DURATION = 180;
     static final ChronoUnit DEFAULT_SIMULATION_UNIT = ChronoUnit.DAYS;
 
+
 }
